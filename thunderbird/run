@@ -1,0 +1,14 @@
+#!/bin/sh -eux
+
+create_fresh_snapshot() {
+	vagrant destroy --force
+	vagrant up --provision
+	vagrant snapshot save fresh --force
+}
+
+vagrant up
+vagrant ssh --command thunderbird
+
+vagrant snapshot restore fresh --no-provision || create_fresh_snapshot
+
+vagrant halt
