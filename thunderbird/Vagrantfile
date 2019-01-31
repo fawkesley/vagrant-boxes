@@ -46,6 +46,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "~/Downloads/thunderbird", "/home/vagrant/Downloads", create: true
   config.vm.synced_folder "~/.cache/vagrant-apt-archives", "/var/cache/apt/archives", create: true
   config.vm.synced_folder "~/dotfiles/thunderbird/.thunderbird", "/home/vagrant/.thunderbird"
+  config.vm.synced_folder "~/.cache/thunderbird", "/home/vagrant/.cache/thunderbird", create: true
+  config.vm.synced_folder "~/.gnupg", "/home/vagrant/.gnupg"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
